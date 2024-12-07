@@ -1,7 +1,14 @@
 package com.todo.Project1.Model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "todos")
 public class ToDo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String task;
     private boolean completed;
 

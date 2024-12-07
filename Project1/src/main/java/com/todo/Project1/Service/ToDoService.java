@@ -12,19 +12,22 @@ public class ToDoService {
     @Autowired
     private ToDoRepository repository;
 
-    public List<ToDo> getAllTasks() {
+    public List<ToDo> findAll() {
         return repository.findAll();
     }
 
-    public ToDo addTask(ToDo task) {
+    public ToDo save(ToDo task) {
         return repository.save(task);
     }
 
-    public void deleteTask(int id) {
+    public void deleteById(int id) {
         repository.deleteById(id);
     }
 
-    public ToDo updateTask(ToDo task) {
-        return repository.update(task);
+    public ToDo update(ToDo task) {
+        return repository.save(task); 
     }
 }
+
+
+  
